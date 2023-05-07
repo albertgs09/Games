@@ -1,6 +1,6 @@
 # MeteorGame
 Scripts I created for my MeteorNumbers game. 
-Game is currently in review to be published on Google Play.
+
 Educational game for kids so they can have fun learning their first numbers or solving basic math problems.
 
 ![Screenshot 2022-07-13 022014](https://user-images.githubusercontent.com/65637580/180156218-63659b09-8ad6-4b96-998a-985bf0bdc4cd.png)
