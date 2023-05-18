@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CoinCollecter : MonoBehaviour
 {
-    [SerializeField]
     public int totalCoins = 0;
     public AudioSource soundEffect;
 
