@@ -5,22 +5,21 @@ using UnityEngine;
 public class EatingWitch : MonoBehaviour
 {
     public GameObject torch;
-    AudioSource witchAudio;
+    private AudioSource witchAudio;
     public AudioClip clip, heartBeat, scare;
-    Animator anim;
-    int i = 0;
+    private Animator anim;
+    private int i = 0;
     public GameObject player;
     public AudioSource camAudio, scareAudio;
     public TimedDeath deathTime;
     
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         witchAudio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter(Collider other)
+   private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -30,15 +29,12 @@ public class EatingWitch : MonoBehaviour
             witchAudio.loop = false;
             anim.SetTrigger("Scream");
             if(i == 0)
-            {
                 StartCoroutine(TurnOffTorch(1));
-            }
             Destroy(gameObject, 5f);
-        }
-        
+        } 
     }
 
-    IEnumerator TurnOffTorch(float time)
+    private IEnumerator TurnOffTorch(float time)
     {
         i++;
         yield return new WaitForSeconds(time);
