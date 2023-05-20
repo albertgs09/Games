@@ -6,7 +6,7 @@ public class FurnitureFalling : MonoBehaviour
 {
     public GameObject[] fallObjects;
     public GameObject furniture, readyObject;
-    BoxCollider col;
+    private BoxCollider col;
 
     private void Start()
     {
@@ -16,25 +16,13 @@ public class FurnitureFalling : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //try using force to slam the furniture down faster
-
-
+            //Slams furniture down
             furniture.transform.position = new Vector3(0, 3.75f, 0);
-            fallObjects[0].GetComponent<MeshCollider>().enabled = false;
-            fallObjects[1].GetComponent<MeshCollider>().enabled = false;
-            fallObjects[2].GetComponent<MeshCollider>().enabled = false;
-            fallObjects[3].GetComponent<MeshCollider>().enabled = false;
-
-            fallObjects[0].GetComponent<Rigidbody>().useGravity = false;
-            fallObjects[1].GetComponent<Rigidbody>().useGravity = false;
-            fallObjects[2].GetComponent<Rigidbody>().useGravity = false;
-            fallObjects[3].GetComponent<Rigidbody>().useGravity = false;
-
-            fallObjects[0].GetComponent<Rigidbody>().mass = 0;
-            fallObjects[1].GetComponent<Rigidbody>().mass = 0;
-            fallObjects[2].GetComponent<Rigidbody>().mass = 0;
-            fallObjects[3].GetComponent<Rigidbody>().mass = 0;
-
+            foreach(var furn in fallObjects){
+                furn.GetComponent<MeshCollider>().enabled = false;
+                furn.GetComponent<Rigidbody>().useGravity = false;
+                furn.GetComponent<Rigidbody>().mass = 0;
+            }
             readyObject.SetActive(true);
             Destroy(col);
         }    
