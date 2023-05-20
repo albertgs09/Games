@@ -6,7 +6,7 @@ public class GirlScreaming : MonoBehaviour
 {
     public GameObject screaming;
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
