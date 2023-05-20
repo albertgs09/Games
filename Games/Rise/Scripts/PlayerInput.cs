@@ -9,7 +9,7 @@ public class PlayerInput : MonoBehaviour
 {
     public float interactionDistance = 3;
     public GameObject reticle, activateColliders, instructions, death;
-    GameObject door;
+    private GameObject door;
     public Text inGameText;
     public Sprite reticleHighlightedImage;
     public Sprite reticleDimmedImage;
@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
     public PauseController pauseController;
     readonly string lockedText = "Door is locked, you need the right key to open it.";
     readonly string headToFrontDoor = "Got it! Time to get out of here!";
-    bool canOpenDoor = false;
+    private bool canOpenDoor = false;
     public bool hasKey = false, hasRoofKey = false, hasFrontDoorKey = false;
 
     private void Start()
@@ -86,10 +86,7 @@ public class PlayerInput : MonoBehaviour
 
         } 
         if (other.gameObject.CompareTag("FollowCrawlers"))
-        {
             instructions.SetActive(false) ;
-
-        }
 
         if (other.gameObject.CompareTag("Trigger2"))
         {
@@ -170,13 +167,8 @@ public class PlayerInput : MonoBehaviour
         else if (canOpenDoor && hasKey == false && door.GetComponent<OpenDoor>().doorName == "Door")
         {
             if (Input.GetMouseButtonDown(0))
-            {
                 DoorLocked();
-            }
         }
-
-
-
         if (canOpenDoor && hasFrontDoorKey && door.GetComponent<OpenDoor>().doorName == "FrontDoor")
         {
             if (Input.GetMouseButtonDown(0))
@@ -191,14 +183,9 @@ public class PlayerInput : MonoBehaviour
         else if (canOpenDoor && hasFrontDoorKey == false && door.GetComponent<OpenDoor>().doorName == "FrontDoor")
         {
             if (Input.GetMouseButtonDown(0))
-            {
                DoorLocked();
-            }
         }
         
-       
-
-
         if (canOpenDoor && hasRoofKey && door.GetComponent<OpenDoor>().doorName == "RoofDoor")
         {
             if (Input.GetMouseButtonDown(0))
@@ -215,20 +202,17 @@ public class PlayerInput : MonoBehaviour
         else if (canOpenDoor && hasRoofKey == false && door.GetComponent<OpenDoor>().doorName == "RoofDoor")
         {
             if (Input.GetMouseButtonDown(0))
-            {
                 DoorLocked();
-            }
         }
-
     }
 
-    void DoorOpen()
+   private void DoorOpen()
     {
         audioSource.clip = doorOpen;
         audioSource.Play();
     }
 
-    void DoorLocked()
+    private void DoorLocked()
     {
         instructions.SetActive(true);
         inGameText.text = lockedText;
@@ -236,7 +220,7 @@ public class PlayerInput : MonoBehaviour
         audioSource.Play();
     }
 
-    void KeyPickedUp()
+    private void KeyPickedUp()
     {
         audioSource.clip = pickedUpKey;
         audioSource.Play();
