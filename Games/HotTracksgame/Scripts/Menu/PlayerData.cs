@@ -6,12 +6,12 @@ public class PlayerData : MonoBehaviour
 {
     string[] cars = new string[16];
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         LoadData();
     }
-
+    
+    //Saves car selected, money and the cost of each car
     public void SaveData(int i, int j, int money, int cost)
     {
         PlayerPrefs.SetInt(cars[i], j);
@@ -35,23 +35,5 @@ public class PlayerData : MonoBehaviour
         if (PlayerPrefs.GetInt(cars[i]) == 1)
             return true;
         return false;
-    }
-
-    private void Update()
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            foreach(string car in cars)
-            {
-                PlayerPrefs.SetInt(car, 0);
-            }
-            PlayerPrefs.SetInt("CarChoice", 0);
-            PlayerPrefs.SetInt("Money", 75);
-            PlayerPrefs.SetInt("Cost", 50);
-            Debug.Log("Game data has been reset");
-
-        }
-        */
     }
 }
