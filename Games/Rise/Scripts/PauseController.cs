@@ -8,8 +8,7 @@ public class PauseController : MonoBehaviour
 {
     public GameObject pauseMain, controls;
     public Text key1, key2, key3;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         pauseMain.SetActive(true);
         controls.SetActive(false);
