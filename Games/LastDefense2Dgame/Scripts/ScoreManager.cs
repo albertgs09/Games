@@ -13,8 +13,8 @@ public class ScoreManager : MonoBehaviour
     {
         score = 0;
     }
-    // Update is called once per frame
-    void Update()
+   
+    private void Update()
     {
         score_textholder.text = "Score: " + score.ToString();
         final_score_textholder.text = score.ToString();
