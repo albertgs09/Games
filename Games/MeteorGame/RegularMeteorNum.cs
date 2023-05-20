@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class RegularMeteorNum : MonoBehaviour
 {
-
     public GameObject rockExplode, meteorAudio;
     public Sprite[] numbers;
-    int num;
-    SpriteRenderer mySprite;
-
-    // Start is called before the first frame update
-    void Start()
+    private int num;
+    private SpriteRenderer mySprite;
+    
+    private void Start()
     {
         mySprite = GetComponent<SpriteRenderer>();
         num = Random.Range(0, 10);
@@ -19,8 +17,7 @@ public class RegularMeteorNum : MonoBehaviour
         meteorAudio = GameObject.FindGameObjectWithTag("Audio");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.Rotate(new Vector3(0, 0, 14) * Time.deltaTime);
     }
@@ -35,8 +32,6 @@ public class RegularMeteorNum : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Destroyer"))
-        {
             Destroy(gameObject);
-        }
     }
 }
