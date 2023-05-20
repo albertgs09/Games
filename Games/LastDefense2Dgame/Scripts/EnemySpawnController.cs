@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class EnemySpawnController : MonoBehaviour
 {
-    float rand_position;
-    Vector2 spawn_position;
+    private float rand_position;
+    private Vector2 spawn_position;
     public float spawn_rate = 2.0f;
     private float next_spawn = 0.0f;
-
     public List<GameObject> enemy_List;
     private GameObject random_enemy;
-
+    
     private GameObject RandomEnemy()
     {
         var random_temp = Random.Range(0, enemy_List.Count);
@@ -24,7 +23,6 @@ public class EnemySpawnController : MonoBehaviour
             }
         }
         return random_enemy;
-
     }
 
     private void SpawnEnemy()
@@ -42,5 +40,4 @@ public class EnemySpawnController : MonoBehaviour
     {
         SpawnEnemy();
     }
-
 }
