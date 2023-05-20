@@ -7,15 +7,15 @@ public class CamController : MonoBehaviour
     public GameObject Player;
     public GameObject child;
     public float speed;
-    // Start is called before the first frame update
-    void Awake()
+   
+   private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         child = Player.transform.Find("CameraConstraint").gameObject;        
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    
+   private void FixedUpdate()
     {
         Follow();
     }
