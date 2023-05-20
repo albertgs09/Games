@@ -16,7 +16,7 @@ public class FurnitureFalling : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Slams furniture down
+            //Picks furniture up to the ceiling, turns off collider, gravity and turns the mass to 0
             furniture.transform.position = new Vector3(0, 3.75f, 0);
             foreach(var furn in fallObjects){
                 furn.GetComponent<MeshCollider>().enabled = false;
