@@ -10,17 +10,11 @@ public class CamZoom : MonoBehaviour
     {
         cam = Camera.main;  
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButton(2))
-        {
             cam.fieldOfView = 30;
-        }
         if(Input.GetMouseButtonUp(2))
-        {
             cam.fieldOfView = 60;
-        }
     }
 }
