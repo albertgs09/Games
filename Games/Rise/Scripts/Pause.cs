@@ -4,31 +4,23 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    bool isPaused = false;
+    private bool isPaused = false;
     public GameObject pauseScreen;
     public AudioSource camAudio;
     public PauseController pc;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Paused();
-        }    
+            Paused();    
     }
 
-   void Paused()
+   private void Paused()
     {
-
         isPaused = !isPaused;
-       // playerAudio.clip = click;
-       // playerAudio.Play();
-        //try a switch
         if (isPaused == true)
         {
             Time.timeScale = 0;
-           // topPanel.SetActive(false);
             pauseScreen.SetActive(true);
             camAudio.volume = 0.1f;
             pc.enabled = true;
@@ -36,7 +28,6 @@ public class Pause : MonoBehaviour
         else
         {
             Time.timeScale = 1;
-            //topPanel.SetActive(true);
             pauseScreen.SetActive(false);
             camAudio.volume = 0.5f;
             pc.Main();
