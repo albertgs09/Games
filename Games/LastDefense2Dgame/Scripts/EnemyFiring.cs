@@ -9,15 +9,13 @@ public class EnemyFiring : MonoBehaviour
     public GameObject chargeLight;
     public AudioSource audioSound;
     public AudioClip missileDetection;
-    // Start is called before the first frame update
-    void Start()
+   
+    private void Start()
     {
         missile = GetComponentInChildren<ProjectileController>();
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         timeTillShot -= Time.deltaTime;
         if(timeTillShot > 2f)
@@ -26,15 +24,13 @@ public class EnemyFiring : MonoBehaviour
             audioSound.Play();
         }
         if(timeTillShot < 2f && timeTillShot > 0)
-        {
-            chargeLight.SetActive(true);
-           
-        }
+            chargeLight.SetActive(true);       
+        
         if (timeTillShot < 0)
         {
-                missile.Shoot();
+            missile.Shoot();
             chargeLight.SetActive(false);
-                timeTillShot = 3;
+            timeTillShot = 3;
         }
     }
 }
