@@ -5,15 +5,14 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
     public Transform player;
-    Animator anim;
-    bool follow;
-    AudioSource audioWalk;
+    private Animator anim;
+    private bool follow;
+    private AudioSource audioWalk;
     public AudioClip clip, growl;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();  
         anim = GetComponentInChildren<Animator>();
@@ -23,8 +22,7 @@ public class FollowPlayer : MonoBehaviour
         audioWalk.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (follow)
         {
