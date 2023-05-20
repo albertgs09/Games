@@ -7,7 +7,6 @@ public class NormalGC : MonoBehaviour
 {
     public GameObject playArea, pauseArea, redBG;
     public bool isPlaying = true;
-    // Start is called before the first frame update
    
     public void Pause()
     {
