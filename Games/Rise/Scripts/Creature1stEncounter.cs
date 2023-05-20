@@ -7,16 +7,14 @@ public class Creature1stEncounter : MonoBehaviour
     public Transform point;
     public float speed = 5;
     public float smooth = 5;
-    Animator animator;
+   private Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+   private void Update()
     {
         //rotates object smoothly to target
         var rotation = Quaternion.LookRotation(point.position - transform.position);
