@@ -5,7 +5,7 @@ using UnityEngine;
 public class Music : MonoBehaviour
 {
     public int times;
-    AudioSource camAudio;
+    private AudioSource camAudio;
     public AudioClip[] clip;
 
 
@@ -40,7 +40,7 @@ public class Music : MonoBehaviour
         }
     }
 
-    void PlayTrack(int i)
+   private void PlayTrack(int i)
     {
         camAudio.clip = clip[i];
         camAudio.Play();
