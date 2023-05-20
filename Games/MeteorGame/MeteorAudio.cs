@@ -9,7 +9,7 @@ public class MeteorAudio : MonoBehaviour
 
     [SerializeField]
     private bool numAudioOn;
-    // Start is called before the first frame update
+    
     void Start()
     {
         meteor = GetComponent<AudioSource>();
@@ -26,7 +26,7 @@ public class MeteorAudio : MonoBehaviour
         
     }
 
-    IEnumerator NumWait(float time)
+   private IEnumerator NumWait(float time)
     {
         yield return new WaitForSeconds(time);
         meteor.Play();
