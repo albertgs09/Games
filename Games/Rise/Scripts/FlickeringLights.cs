@@ -12,13 +12,11 @@ public class FlickeringLights : MonoBehaviour
 
     public AudioSource aS;
     public AudioClip lightAudio;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Timer = Random.Range(MinTime, MaxTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
         FlickerLights();
@@ -27,14 +25,11 @@ public class FlickeringLights : MonoBehaviour
     void FlickerLights()
     {
         if(Timer > 0)
-        {
             Timer -= Time.deltaTime;
-        }
         if(Timer <= 0)
         {
             _light.enabled = !_light.enabled;
             Timer = Random.Range(MinTime, MaxTime);
-            //aS.PlayOneShot(lightAudio);
         }
     }
 }
