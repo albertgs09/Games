@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Store where you can buy different cars
 public class Store : MonoBehaviour
 {
     public MeshFilter bodyRef;
@@ -11,21 +12,20 @@ public class Store : MonoBehaviour
     public Sprite locked;
     public Sprite available;
     public Text moneyText, costText;
-    int i = 0;
-    int money = 100;
-    int carCost = 50;
-    bool unlocked, enoughMoney;
-    Navigate menu;
+    private int i = 0;
+    private int money = 100;
+    private int carCost = 50;
+    private bool unlocked, enoughMoney;
+    private Navigate menu;
     public PlayerData data;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         menu = GetComponent<Navigate>();
         i = PlayerPrefs.GetInt("CarChoice", 0);
         carCost = PlayerPrefs.GetInt("Cost", 50);
         bodyRef.mesh = color[i];
-         money = PlayerPrefs.GetInt("Money", 75);
+        money = PlayerPrefs.GetInt("Money", 75);
         moneyText.text = money.ToString();
         costText.text = carCost.ToString();
         CheckingAvailability(i);
@@ -79,7 +79,7 @@ public class Store : MonoBehaviour
         }
     }
 
-    void CheckCost()
+    private void CheckCost()
     {
         if (money >= carCost)
         {
@@ -93,7 +93,7 @@ public class Store : MonoBehaviour
         }
     }
 
-   void CheckingAvailability(int j)
+   private void CheckingAvailability(int j)
     {
         unlocked = data.CheckData(j);
         if (unlocked)
@@ -102,14 +102,14 @@ public class Store : MonoBehaviour
             Locked();
     }
 
-    void Unlocked()
+    private void Unlocked()
     {
         selector.sprite = available;
         selector.color = Color.green;
         costText.enabled = false; 
     }
 
-    void Locked()
+    private void Locked()
     {
         selector.sprite = locked;
         selector.color = Color.white;
