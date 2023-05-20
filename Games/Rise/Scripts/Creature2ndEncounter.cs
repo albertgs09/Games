@@ -7,32 +7,25 @@ public class Creature2ndEncounter : MonoBehaviour
     public Transform point;
     public float speed = 5;
     public float smooth = 5;
-    Animator animator;
-    string creature;
+    private Animator animator;
+    private string creature;
     public float moveTime = 4;
    
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         creature = gameObject.name;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(creature == "crawler1")
-        {
             Creature1();
-        }
         else if(creature == "crawler2")
-        {
             Creature2();
-        }
-
     }
 
-    void  Creature1()
+    private void Creature1()
     {
         moveTime -= Time.deltaTime;        
 
@@ -43,18 +36,17 @@ public class Creature2ndEncounter : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * smooth);
             //moves object forward
             transform.Translate(Vector3.left * speed * Time.deltaTime);
-        animator.SetBool("move", true);
-
-        Destroy(gameObject, 1.5f);
+            animator.SetBool("move", true);
+            Destroy(gameObject, 1.5f);
         }    
     }
 
-    void Creature2()
+    private void Creature2()
     {
         moveTime -= Time.deltaTime;
         if(moveTime < 0)
         {
-            //moves object forward
+            //moves object forward based on the creatures postion
             transform.Translate(Vector3.left * speed * Time.deltaTime);
             animator.SetBool("move", true);
             Destroy(gameObject, 1.5f);
