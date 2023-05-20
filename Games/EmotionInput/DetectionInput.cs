@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 //Created by Alberto Alvarado Jr
 public class DetectionInput : MonoBehaviour
 {
-    //variables
+    
     #region
     public EmotionsManager emotions;
     public Slider timeSlider;
@@ -16,18 +16,18 @@ public class DetectionInput : MonoBehaviour
     public Sprite sad, happy, neutral, angry, surprised;
     public Text timerText, pointsText, passedText;
     public GameObject restartButton, results, playButton, pauseButton, closeButton, instructionText, slider ;
-    bool playing, addPoint, endGame;
-    float timeTillNext;
-    float timer, waitTimer;
-    int emotionCount;
-    int prevEmotionCount;
-    int curPoints, totalEmotionsDisplayed;
-    AudioSource soundEffects;
+    private bool playing, addPoint, endGame;
+    private float timeTillNext;
+    private float timer, waitTimer;
+    private int emotionCount;
+    private int prevEmotionCount;
+    private int curPoints, totalEmotionsDisplayed;
+    private AudioSource soundEffects;
     public AudioSource camAudio;
-     public AudioClip right, wrong, fastSong;
+    public AudioClip right, wrong, fastSong;
     #endregion
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
         soundEffects = GetComponent<AudioSource>();
         emotionCount = Random.Range(0,5);
@@ -37,8 +37,8 @@ public class DetectionInput : MonoBehaviour
         slider.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         GamePlay();
         if (endGame)
@@ -51,7 +51,7 @@ public class DetectionInput : MonoBehaviour
         }
      
     }   
-    void GamePlay()
+    private void GamePlay()
     {
         if (playing)
         {
@@ -118,7 +118,7 @@ public class DetectionInput : MonoBehaviour
        
     }
 
-    void EndGame()
+   private void EndGame()
     {
         emoImage.enabled = false;
         timerText.enabled = false;
@@ -131,7 +131,7 @@ public class DetectionInput : MonoBehaviour
         pauseButton.SetActive(false);
         slider.SetActive(false);
     }
-    void SwitchEmotions()
+   private void SwitchEmotions()
     {
         totalEmotionsDisplayed++;//counts how many emotions have been displayed
         prevEmotionCount = emotionCount;     
@@ -148,7 +148,7 @@ public class DetectionInput : MonoBehaviour
             waitTimer = .5f;
         }
     }
-    void Points(int points)
+   private void Points(int points)
     {
         if (addPoint)
         {
@@ -160,7 +160,7 @@ public class DetectionInput : MonoBehaviour
   
     //emotions input from Emotion Manager Script
      #region
-    void Neutral()
+   private void Neutral()
     {
         if (emotions.Neutral >= 0.5f && timeTillNext < 5)
         {
@@ -177,7 +177,7 @@ public class DetectionInput : MonoBehaviour
             soundEffects.Play();
         }
     }
-    void Happy()
+ private void Happy()
     {
         if (emotions.Happy >= 0.5f && timeTillNext < 5)
         {
@@ -194,9 +194,8 @@ public class DetectionInput : MonoBehaviour
             soundEffects.Play();
         }
     }
-    void Surprised()
+   private void Surprised()
     {
-
         if (emotions.Surprised >= 0.5f && timeTillNext < 5)
         {
             soundEffects.clip = right;
@@ -211,7 +210,7 @@ public class DetectionInput : MonoBehaviour
             soundEffects.Play();
         }
     }
-    void Angry()
+    private void Angry()
     {
 
         if (emotions.Angry >= 0.45f && timeTillNext < 5)
@@ -228,7 +227,7 @@ public class DetectionInput : MonoBehaviour
             soundEffects.Play();
         }
     }
-    void Sad()
+   private void Sad()
     {
 
         if (emotions.Sad >= 0.05f && timeTillNext < 5)
