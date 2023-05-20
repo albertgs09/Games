@@ -8,11 +8,9 @@ public class GuidedRocket : MonoBehaviour
     public int speed = 100;
     GameObject lockedTarget;
 
-    // Start is called before the first frame update
-    void Start()
+   private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-       
+        rb = GetComponent<Rigidbody2D>();       
     }
 
     private void Update()
@@ -23,9 +21,6 @@ public class GuidedRocket : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
-        {
             Destroy(gameObject);
-        }
     }
-
 }
