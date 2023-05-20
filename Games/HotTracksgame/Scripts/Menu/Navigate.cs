@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
+
+//Navigates through the menu UI
 public class Navigate : MonoBehaviour
 {
     public GameObject startScreen, chooseCarScreen, mapScreen, loadScreen, creditsScreen;
     public Image loadingImage;
     public Animator animator, startAnim;
     public Slider progressBar;
-    bool started;
+    private bool started;
     private AudioSource soundEffectAudio;
     public AudioClip[] sounds;
     public Sprite[] loadingSprites;
-    AsyncOperation loadingOperation;
-    string scene;
+    private AsyncOperation loadingOperation;
+    private string scene;
+    
     private void Start()
     {
         soundEffectAudio = GetComponent<AudioSource>();
@@ -54,12 +57,13 @@ public class Navigate : MonoBehaviour
         StartCoroutine(WaitTime(1.5f));
     }
 
-    IEnumerator WaitTime(float time)
+    private IEnumerator WaitTime(float time)
     {
         yield return new WaitForSeconds(time);
         mapScreen.SetActive(true);
     }
-
+    
+    //Select map levels
     public void MapSelect(int i)
     {
         switch (i)
@@ -104,13 +108,15 @@ public class Navigate : MonoBehaviour
         soundEffectAudio.Play();
     }
 
-    void LoadingScreen(string scene)
+    //Activates loading screens
+    private void LoadingScreen(string scene)
     {
         loadScreen.SetActive(true);
         loadingOperation = SceneManager.LoadSceneAsync(scene);
     }
-
-    void ProgressBar()
+    
+    //Sets the value for the progress bar
+    private void ProgressBar()
     {
         if (loadingOperation != null)
         {
