@@ -9,11 +9,11 @@ public class GameController : MonoBehaviour
     public Text problemsText, scoreText, highscore;
     public GameObject playArea, pauseArea, redBG, greenBG, deadArea;
     public bool isPlaying;
-    int num1, num2, result, currentScore, mode;
+    private int num1, num2, result, currentScore, mode;
     public int selectedMeteorNum, health;
-    string add = " + ", sub = " - ", mult = " x ";
-    // Start is called before the first frame update
-    void Start()
+    private string add = " + ", sub = " - ", mult = " x ";
+    
+    private void Start()
     {
         isPlaying = true;
         Time.timeScale = 1;
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
             Dead();
         }
     }
-     void Dead()
+    private void Dead()
     {
         isPlaying = false;
         highscore.text = "Score: " + currentScore.ToString();
@@ -58,18 +58,18 @@ public class GameController : MonoBehaviour
         }
     }
 
-    IEnumerator Hurt(float time)
+    private IEnumerator Hurt(float time)
     {
         yield return new WaitForSeconds(time);
         redBG.SetActive(false);
     }
-     IEnumerator Right(float time)
+     private IEnumerator Right(float time)
     {
         yield return new WaitForSeconds(time);
         greenBG.SetActive(false);
     }
 
-    void UpdateProblem()
+    private void UpdateProblem()
     {
         // gets 2 random numbers from 0-5
         num1 = Random.Range(0, 5);
@@ -105,9 +105,6 @@ public class GameController : MonoBehaviour
                 */
         }
     }
-
-
-
     public void Pause()
     {
         isPlaying = false;
