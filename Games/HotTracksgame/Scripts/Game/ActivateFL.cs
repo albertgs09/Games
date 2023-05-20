@@ -7,7 +7,6 @@ public class ActivateFL : MonoBehaviour
     public GameObject finishLine, wrongWay, thisWay;
     public Light finishLight;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -17,8 +16,6 @@ public class ActivateFL : MonoBehaviour
                 finishLight.color = Color.green;
             if (thisWay != null)
                 thisWay.SetActive(true);
-
-
             Destroy(gameObject);
             Destroy(wrongWay);
         }
