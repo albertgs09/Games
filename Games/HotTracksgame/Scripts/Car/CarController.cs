@@ -41,8 +41,8 @@ public class CarController : MonoBehaviour
 
     public List<Wheel> wheels;
 
-    float moveInput;
-    float steerInput;
+    private float moveInput;
+    private float steerInput;
     public bool startTimer = false;
     public float timer = 3f;
 
@@ -58,7 +58,7 @@ public class CarController : MonoBehaviour
         carRb.centerOfMass = _centerOfMass;
     }
 
-    void Update()
+   private void Update()
     {
         GetInputs();
         AnimateWheels();
@@ -66,7 +66,7 @@ public class CarController : MonoBehaviour
         //WheelEffects();
     }
 
-    void LateUpdate()
+   private void LateUpdate()
     {
         Move();
         Steer();
@@ -83,7 +83,7 @@ public class CarController : MonoBehaviour
         steerInput = input;
     }
 
-    void GetInputs()
+   private void GetInputs()
     {
         if (control == ControlMode.Keyboard)
         {
@@ -92,7 +92,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void Move()
+    private void Move()
     {
         foreach (var wheel in wheels)
         {
@@ -101,7 +101,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void Steer()
+    private void Steer()
     {
         foreach (var wheel in wheels)
         {
@@ -113,7 +113,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void Brake()
+    private void Brake()
     {
         if (Input.GetKey(KeyCode.Space))
         {
@@ -145,7 +145,7 @@ public class CarController : MonoBehaviour
             tailLight.SetActive(false);
     }
 
-    void AnimateWheels()
+   private void AnimateWheels()
     {
         foreach (var wheel in wheels)
         {
@@ -157,7 +157,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void WheelEffects()
+   private void WheelEffects()
     {
         foreach (var wheel in wheels)
         {
@@ -175,7 +175,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void PlayAudio()
+   private void PlayAudio()
     {
         var i = 0;
 
