@@ -6,8 +6,6 @@ public class CinematicTrigger : MonoBehaviour
 {
     public GameObject player, cinematicCam, pause, light, witches;
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
