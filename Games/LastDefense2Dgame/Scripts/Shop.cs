@@ -6,15 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
-    AudioSource click;
+    private AudioSource click;
     public int currentCoins = 100;
-    int shipCost;
+    private int shipCost;
     public GameObject[] buttons, equipButtons, equippedText;
     public GameObject notEnoughText;
     public Text coins;
     private void Start()
     {
-
         click = GetComponent<AudioSource>();
         coins.text = "Coins: " + currentCoins;
     }
