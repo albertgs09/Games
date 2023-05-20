@@ -8,27 +8,24 @@ public class MenuController : MonoBehaviour
 {
     public string sceneToLoad;
 
-    AsyncOperation loadingOperation;
+    private AsyncOperation loadingOperation;
     public Slider progressBar;
     public GameObject loadingScreen, mainMenu, controlsMenu, credits;
 
     public Text title;
 
-    AudioSource click;
+    private AudioSource click;
 
     private void Start()
     {
-       // click = GetComponent<AudioSource>();
         Time.timeScale = 1;
-
     }
-    void Update()
+    private void Update()
     {
         if (loadingOperation != null)
         {
             float progressValue = Mathf.Clamp01(loadingOperation.progress / 0.9f);
             progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
-
         }
 
     }
@@ -41,7 +38,6 @@ public class MenuController : MonoBehaviour
 
     public void LoadScreen()
     {
-        //click.Play();
         loadingScreen.SetActive(true);
         loadingOperation = SceneManager.LoadSceneAsync(sceneToLoad);
 
