@@ -7,33 +7,27 @@ public class LivesManager : MonoBehaviour
 {
     public TextMeshProUGUI lives_textholder;
     public  int lives_count = 5;
-
     public GameObject gameOver_panel;
     public TextMeshProUGUI sorru_textholder;
-    string sorry = "Sorry, you ran out of lives.";
-
+    private string sorry = "Sorry, you ran out of lives.";
     public GameObject game_panel, pauseScreen, topPanel;
     public GameObject smoke, enemySpawn;
-
     public AudioSource camAudio;
     public AudioSource playerAudio;
     public AudioClip loseClip, playerExplosion, click, playerHit, menuButton;
-    bool isPaused = false;
+    private bool isPaused = false;
 
     private void Start()
     {
         lives_textholder.text = "Lives: " + lives_count.ToString();
-
     }
-    // Update is called once per frame
-    void Update()
+  
+   private void Update()
     {
-
         if(lives_count == 0)
         {
             camAudio.clip = loseClip;
             camAudio.Play();
-            //Time.timeScale = 0;// 1 to resume
             sorru_textholder.text = sorry;
             gameOver_panel.SetActive(true);
             game_panel.SetActive(false);
@@ -51,17 +45,14 @@ public class LivesManager : MonoBehaviour
             {
                 playerAudio.clip = playerHit;
                 playerAudio.Play();
-
             }
             else 
             {
                 playerAudio.clip = playerExplosion;
                 playerAudio.Play();
-
             }
             lives_count--;
             lives_textholder.text = "Lives: " + lives_count.ToString();
-
             playSmoke();
         }
     }
@@ -70,7 +61,6 @@ public class LivesManager : MonoBehaviour
     {
         GameObject e = Instantiate(smoke) as GameObject;
         e.transform.position = transform.position;
-
         Destroy(e, 0.15f);
     }
 
@@ -79,7 +69,6 @@ public class LivesManager : MonoBehaviour
         isPaused = !isPaused;
         playerAudio.clip = click;
         playerAudio.Play();
-        //try a switch
         if (isPaused == true)
         {
             Time.timeScale = 0;
