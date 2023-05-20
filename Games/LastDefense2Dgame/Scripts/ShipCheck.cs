@@ -7,8 +7,7 @@ public class ShipCheck : MonoBehaviour
     public GameObject[] buttons, equipButtons, equippedText;
     int ship1 , ship2, ship3, ship4, ship5, ship6;
    
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {      
         ship1 = PlayerPrefs.GetInt("Ship1", 0);
         ship2 = PlayerPrefs.GetInt("Ship2", 0);
@@ -20,7 +19,7 @@ public class ShipCheck : MonoBehaviour
         Execute1stButton();
     }
 
-    void Execute1stButton()
+    private void Execute1stButton()
     {
         if(ship1 == 0)
         {
