@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Moves background 
 public class BackgroundMovement : MonoBehaviour
 {
     public float speed;
@@ -12,8 +12,8 @@ public class BackgroundMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         rb.velocity = new Vector2(0f, -speed);//moves enemy
         Destroy(this.gameObject, destroyTime);
