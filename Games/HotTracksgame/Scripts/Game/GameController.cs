@@ -11,20 +11,19 @@ public class GameController : MonoBehaviour
     public Text timerText, countDownText, yourTimeText, bestTimeText, coins;
     public GameObject scores;
     public float timer, countDown = 3;
-    bool startCountdown, startTimer;
+    private bool startCountdown, startTimer;
     public bool finished;
-    int i = 0, currentCoins;
-    // Start is called before the first frame update
-    void Start()
+    private int i = 0, currentCoins;
+    
+    private void Start()
     {
         StartCoroutine(StartCountDown(2));
         carController.enabled = false;
         currentCoins = PlayerPrefs.GetInt("Money", 0);
-        Debug.Log("Money: " + currentCoins);
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         if(countDown > 0)
             CountDown();
@@ -48,13 +47,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void Timer()
+    private void Timer()
     {
         timer += Time.deltaTime;
         timerText.text = timer.ToString();
     }
 
-    void CountDown()
+    private void CountDown()
     {
         if (startCountdown)
             countDown -= Time.deltaTime;
@@ -70,14 +69,14 @@ public class GameController : MonoBehaviour
         countDownText.text = countDown.ToString();
     }
 
-    IEnumerator StartCountDown(float time)
+    private IEnumerator StartCountDown(float time)
     {
         yield return new WaitForSeconds(time);
         countDownText.enabled = true;
         startCountdown = true;
     }
 
-    IEnumerator GoToMenu(float time)
+    private IEnumerator GoToMenu(float time)
     {
         yield return new WaitForSeconds(time);
         Menu();
