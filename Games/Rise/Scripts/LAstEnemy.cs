@@ -17,24 +17,18 @@ public class LAstEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             m_Enemy.SetActive(true);
-           // light.SetActive(false);
             playerAudio.clip = lastClipl;
             playerAudio.Play();
             camAudio.clip = lastMusic;
             camAudio.Play();
             Cursor.visible = true ;
             Cursor.lockState = CursorLockMode.None;
-
-            // playerInput.enabled = false;
-            //playerMovement.playerCanMove = false;
-            //playerMovement.enableCameraMovement = false;
             SceneManager.LoadScene("TitleMenu");
-
             StartCoroutine(LeaveToMenu(3));
         }
     }
 
-    IEnumerator LeaveToMenu(float time)
+    private IEnumerator LeaveToMenu(float time)
     {
         yield return new WaitForSeconds(time);
         Time.timeScale = 0;
