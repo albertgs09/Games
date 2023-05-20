@@ -6,19 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    AsyncOperation loadingOperation;
+    private AsyncOperation loadingOperation;
     public Slider progressBar;
     public GameObject menu, loadingScreen, titleScreen, controlScreen, credits;
 
-    void Update()
+    private void Update()
     {
         if (loadingOperation != null)
         {
             float progressValue = Mathf.Clamp01(loadingOperation.progress / 0.9f);
             progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
-
         }
-
     }
     public void Play()
     {
