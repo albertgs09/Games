@@ -7,28 +7,25 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 1;
     public  int lives;
-
     public GameObject smoke;
     public GameObject explosion;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        rb.velocity = new Vector2(0f, -speed);//moves enemy
+        //Moves enemy
+        rb.velocity = new Vector2(0f, -speed);
+        
         if(lives <= 0)
         {
             ScoreManager.score += 10;//updates score
             playExplosion();
             Destroy(gameObject);
-        }
-
-      
+        }  
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +48,6 @@ public class EnemyController : MonoBehaviour
     {
         GameObject e = Instantiate(explosion) as GameObject;
         e.transform.position = transform.position;
-
         Destroy(e, 0.15f);
     }
 }
