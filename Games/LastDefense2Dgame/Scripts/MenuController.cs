@@ -7,21 +7,16 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public string sceneToLoad;
-
-    AsyncOperation loadingOperation;
+    private AsyncOperation loadingOperation;
     public Slider progressBar;
     public Text percentLoaded;
     public GameObject loadingScreen, settingsButton, playButton, backButton;
-
     public Text title;
-
-    AudioSource click;
-
+    private AudioSource click;
     private void Start()
     {
         click = GetComponent<AudioSource>();
         Time.timeScale = 1;
-
     }
     void Update()
     {
@@ -30,9 +25,7 @@ public class MenuController : MonoBehaviour
             float progressValue = Mathf.Clamp01(loadingOperation.progress / 0.9f);
             percentLoaded.text = Mathf.Round(progressValue * 100) + "%";
             progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
-
         }
-
     }
 
     public void LoadScreen()
@@ -41,11 +34,11 @@ public class MenuController : MonoBehaviour
         loadingScreen.SetActive(true);
         loadingOperation = SceneManager.LoadSceneAsync(sceneToLoad);
 
-    }  public void LoadShop()
+    }
+    public void LoadShop()
     {
         click.Play();
         SceneManager.LoadScene("Shop");
-
     }
 
     public void Settings()
@@ -65,6 +58,4 @@ public class MenuController : MonoBehaviour
         backButton.SetActive(false);
         playButton.SetActive(true);
     }
-
-
 }
