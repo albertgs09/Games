@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    string[] cars = new string[16];
+    private string[] cars = new string[16];
 
     private void Start()
     {
@@ -17,9 +17,6 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetInt(cars[i], j);
         PlayerPrefs.SetInt("Money", money);
         PlayerPrefs.SetInt("Cost", cost);
-        Debug.Log("Data Saved for Car: " + cars[i]);
-        Debug.Log("Data Saved for money: " + money);
-        Debug.Log("Data Saved for cost: " + cost);
     }
 
     public void LoadData()
