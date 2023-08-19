@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls pop up for the eating witch
 public class EatingWitch : MonoBehaviour
 {
     public GameObject torch;
