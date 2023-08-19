@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Switches between audio tracks during the game
 public class Music : MonoBehaviour
 {
     public int times;
