@@ -32,10 +32,12 @@ public class Store : MonoBehaviour
         CheckCost();
     }
 
+    //Checks the selected car if its unlocked or has enough money to purchase
     public void SelectedCar()
     {
         if (unlocked)
         {
+            //Sets the car to be used in-game
             PlayerPrefs.SetInt("CarChoice", i);
             PlayerPrefs.SetInt("Cost", carCost);
             menu.StartLevel();
@@ -50,10 +52,12 @@ public class Store : MonoBehaviour
         }
         else
         {
+            //plays a 'not enough money' audio
             menu.AudioEffects(1);
         }
     }
 
+    //changes car skin to next one
     public void ChangeForward()
     {
         if (i < color.Length - 1)
@@ -66,6 +70,7 @@ public class Store : MonoBehaviour
             CheckingAvailability(i);
         }
     }
+    //changes car skin to previous one
     public void ChangeBackward()
     {
         if (i != 0)
