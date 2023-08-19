@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//AI for witch that chases you around
 public class ChasingWitch : MonoBehaviour
 {
-    NavMeshAgent agent;
-    Animator anim;
-    GameObject player;
-    bool chase;
-    int i;
-    SphereCollider col;
-    AudioSource audio;
-    // Start is called before the first frame update
+    private NavMeshAgent agent;
+    private Animator anim;
+    private GameObject player;
+    private bool chase;
+    private int i;
+    private SphereCollider col;
+    private AudioSource audio;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -22,7 +22,6 @@ public class ChasingWitch : MonoBehaviour
         col = GetComponent<SphereCollider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (chase)
@@ -45,7 +44,7 @@ public class ChasingWitch : MonoBehaviour
         }
     }
 
-    IEnumerator Scream(float time)
+    private IEnumerator Scream(float time)
     {
         yield return new WaitForSeconds(time);
         chase = true;
