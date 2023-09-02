@@ -13,6 +13,5 @@ public class ColorChanger : MonoBehaviour
         bodyRef = GetComponent<MeshFilter>();
         i = PlayerPrefs.GetInt("CarChoice", 0);
         bodyRef.mesh = color[i];
-
     }    
 }
