@@ -19,10 +19,8 @@ public class Creature2ndEncounter : MonoBehaviour
 
     private void Update()
     {
-        if(creature == "crawler1")
-            Creature1();
-        else if(creature == "crawler2")
-            Creature2();
+        if(creature == "crawler1") Creature1();
+        else if(creature == "crawler2") Creature2();
     }
 
     private void Creature1()
