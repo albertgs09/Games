@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GuidedRocket : MonoBehaviour
 {
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     public int speed = 100;
-    GameObject lockedTarget;
+    private GameObject lockedTarget;
 
    private void Start()
     {
@@ -15,8 +15,7 @@ public class GuidedRocket : MonoBehaviour
 
     private void Update()
     {
-        lockedTarget = GameObject.FindGameObjectWithTag("Enemy");
-      
+        lockedTarget = GameObject.FindGameObjectWithTag("Enemy"); 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
