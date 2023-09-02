@@ -25,23 +25,17 @@ public class CarOffTrack : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Track"))
-        {
-            isOnTrack = true;
-        }
-       
+            isOnTrack = true;     
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Track"))
-        {
             isOnTrack = false;
-        }
     }
     void BackToTrack(float time)
     {
         timer += Time.deltaTime;
         if(timer > time)
             SceneManager.LoadScene(sceneName);
-
     }
 }
