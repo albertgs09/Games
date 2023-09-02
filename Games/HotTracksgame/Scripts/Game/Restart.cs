@@ -8,10 +8,7 @@ public class Restart : MonoBehaviour
     [SerializeField] string sceneName;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            RestartLvl();
-        }
+        if (other.gameObject.CompareTag("Player")) RestartLvl();
     }
 
     public void RestartLvl()
