@@ -17,10 +17,7 @@ public class EnemySpawnController : MonoBehaviour
 
         for (int i = 0; i < enemy_List.Count; i++)
         {
-            if(i == random_temp)
-            {
-                random_enemy = enemy_List[i];
-            }
+            if(i == random_temp) random_enemy = enemy_List[i];
         }
         return random_enemy;
     }
