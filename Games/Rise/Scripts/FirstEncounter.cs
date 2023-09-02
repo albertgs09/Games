@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FirstEncounter : MonoBehaviour
 {
-  public Creature1stEncounter Creature1;
-
+    public Creature1stEncounter Creature1;
 
     private void OnTriggerEnter(Collider other)
     {
