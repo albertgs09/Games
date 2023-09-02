@@ -16,9 +16,6 @@ public class OpenDoor : MonoBehaviour
     }
     private void Update()
     {
-        if (canOpen)
-            animator.enabled = true;
-    }
-
- 
+        if (canOpen) animator.enabled = true;
+    } 
 }
