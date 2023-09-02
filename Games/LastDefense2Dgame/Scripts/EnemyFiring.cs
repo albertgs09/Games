@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyFiring : MonoBehaviour
 {
     public float timeTillShot = 3f;
-    ProjectileController missile;
+    private ProjectileController missile;
     public GameObject chargeLight;
     public AudioSource audioSound;
     public AudioClip missileDetection;
@@ -23,8 +23,7 @@ public class EnemyFiring : MonoBehaviour
             audioSound.clip = missileDetection;
             audioSound.Play();
         }
-        if(timeTillShot < 2f && timeTillShot > 0)
-            chargeLight.SetActive(true);       
+        if(timeTillShot < 2f && timeTillShot > 0) chargeLight.SetActive(true);       
         
         if (timeTillShot < 0)
         {
