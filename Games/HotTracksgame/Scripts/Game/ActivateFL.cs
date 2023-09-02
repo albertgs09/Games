@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Activates finishline collider and enables light color and wrong way signa
 public class ActivateFL : MonoBehaviour
 {
     public GameObject finishLine, wrongWay, thisWay;
