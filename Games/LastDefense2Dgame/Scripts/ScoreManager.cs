@@ -9,10 +9,7 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI final_score_textholder;
     public static int score = 0;
 
-    private void Start()
-    {
-        score = 0;
-    }
+    private void Start() => score = 0;
    
     private void Update()
     {
