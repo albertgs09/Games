@@ -12,9 +12,7 @@ public class CamZoom : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButton(2))
-            cam.fieldOfView = 30;
-        if(Input.GetMouseButtonUp(2))
-            cam.fieldOfView = 60;
+        if (Input.GetMouseButton(2)) cam.fieldOfView = 30;
+        if(Input.GetMouseButtonUp(2)) cam.fieldOfView = 60;
     }
 }
