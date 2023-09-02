@@ -15,7 +15,7 @@ public class CarController : MonoBehaviour
     {
         Front,
         Rear
-    }
+    };
 
     [Serializable]
     public struct Wheel
@@ -24,9 +24,7 @@ public class CarController : MonoBehaviour
         public WheelCollider wheelCollider;
         public GameObject wheelEffectObj;
         public ParticleSystem smokeParticle;
-        public Axel axel;
-
-       
+        public Axel axel;   
     }
 
     public ControlMode control;
@@ -63,7 +61,6 @@ public class CarController : MonoBehaviour
         GetInputs();
         AnimateWheels();
         PlayAudio();
-        //WheelEffects();
     }
 
    private void LateUpdate()
@@ -97,7 +94,6 @@ public class CarController : MonoBehaviour
         foreach (var wheel in wheels)
         {
             wheel.wheelCollider.motorTorque = moveInput * 500 * maxAcceleration * Time.deltaTime;
-
         }
     }
 
@@ -120,24 +116,21 @@ public class CarController : MonoBehaviour
             foreach (var wheel in wheels)
             {
                 wheel.wheelCollider.brakeTorque = 2000 * brakeAcceleration * Time.deltaTime;
-            }
-
-           
+            }           
         }
         else if(moveInput == 0)
         {
             foreach (var wheel in wheels)
             {
-                wheel.wheelCollider.brakeTorque = 1000 * brakeAcceleration * Time.deltaTime; ;
-            }        } 
+                wheel.wheelCollider.brakeTorque = 1000 * brakeAcceleration * Time.deltaTime;
+            }       
+        } 
         else 
         {
             foreach (var wheel in wheels)
             {
                 wheel.wheelCollider.brakeTorque =0 ;
             }
-
-
         }
         if (moveInput < 0 || Input.GetKey(KeyCode.Space))
             tailLight.SetActive(true);
@@ -161,17 +154,13 @@ public class CarController : MonoBehaviour
     {
         foreach (var wheel in wheels)
         {
-            //var dirtParticleMainSettings = wheel.smokeParticle.main;
-
             if (Input.GetKey(KeyCode.Space) && wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 10.0f)
             {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = true;
                 wheel.smokeParticle.Emit(1);
             }
             else
-            {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = false;
-            }
         }
     }
 
@@ -179,20 +168,16 @@ public class CarController : MonoBehaviour
     {
         var i = 0;
 
-
         if (startTimer)
             timer += Time.deltaTime;
        
-
         if (moveInput == 0  && timer < 3)
         {
             startTimer = true;
             i = 2;
         }
         else if (moveInput == 0 && timer >= 3)
-        {
             i = 0;
-        }
         else if (moveInput > 0)
         {
             startTimer = false;
