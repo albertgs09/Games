@@ -24,8 +24,7 @@ public class FlickeringLights : MonoBehaviour
 
     void FlickerLights()
     {
-        if(Timer > 0)
-            Timer -= Time.deltaTime;
+        if(Timer > 0) Timer -= Time.deltaTime;
         if(Timer <= 0)
         {
             _light.enabled = !_light.enabled;
