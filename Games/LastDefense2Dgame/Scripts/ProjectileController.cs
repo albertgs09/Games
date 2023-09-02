@@ -10,7 +10,6 @@ public class ProjectileController : MonoBehaviour
     public void Shoot()
     {
         GameObject bullet = Instantiate(BulletPrefab, this.transform.position, transform.rotation, transform);
-
         Destroy(bullet, 1.5f);
     }
 }
