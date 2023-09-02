@@ -21,16 +21,12 @@ public class PlayerData : MonoBehaviour
 
     public void LoadData()
     {
-        for(int i = 0; i < cars.Length; i++)    
-        {
-            cars[i] = i.ToString();
-        }
+        for(int i = 0; i < cars.Length; i++) cars[i] = i.ToString();
     }
 
     public bool CheckData(int i)
     {
-        if (PlayerPrefs.GetInt(cars[i]) == 1)
-            return true;
+        if (PlayerPrefs.GetInt(cars[i]) == 1) return true;
         return false;
     }
 }
