@@ -25,11 +25,13 @@ public class GameController : MonoBehaviour
     
     private void Update()
     {
-        if(countDown > 0)
-            CountDown();
-        if (startTimer)
-            Timer();
-        if (finished)
+        if(countDown > 0) CountDown();
+        if (startTimer) Timer();
+        CheckGameState();
+    }
+
+    private void CheckGameState(){
+       if (finished)
         {
             startTimer = false;
             timerText.enabled = false;
@@ -37,6 +39,7 @@ public class GameController : MonoBehaviour
             yourTimeText.text = timer.ToString();
             carOffTrack.enabled = false;
             coins.text = "+" +coinCollecter.totalCoins.ToString();
+            
             //saves coin data
             while (i == 0)
             {
@@ -55,8 +58,7 @@ public class GameController : MonoBehaviour
 
     private void CountDown()
     {
-        if (startCountdown)
-            countDown -= Time.deltaTime;
+        if (startCountdown) countDown -= Time.deltaTime;
         if (countDown < 0)
         {
             startCountdown = false;
