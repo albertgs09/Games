@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     private bool lightOn = true;
-    privateLight flashLight;
+    private Light flashLight;
 
     private void Start()
     {
@@ -13,12 +13,9 @@ public class Flashlight : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-            lightOn = !lightOn;
+        if (Input.GetMouseButtonDown(1)) lightOn = !lightOn;
 
-        if (lightOn)
-            flashLight.enabled = true;  
-        else
-            flashLight.enabled = false;  
+        if (lightOn) flashLight.enabled = true;  
+        else flashLight.enabled = false;  
     }
 }
