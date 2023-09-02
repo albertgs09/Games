@@ -23,10 +23,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
-        {
-            Dead();
-        }
+        if(health <= 0)Dead();
     }
     private void Dead()
     {
