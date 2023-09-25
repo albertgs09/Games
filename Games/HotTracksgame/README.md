@@ -27,12 +27,14 @@ For the car's movement, I created it using the Rigidbody and Wheel Collider comp
 <br>
 <br>
 <br>
+Here is the Main Menu screen and Shop System which I created myself. I added animations to the UI elements which gave it a better look. The shop system checks your current credits and compares them to the prices of the car's selected paint. It will either let you purchase or give you an error sound, indicating not enough money.
 
+<br>
+<br>
 https://user-images.githubusercontent.com/65637580/194913703-36798f11-ba85-4764-a76e-6793f3254f84.mp4
 
-<br>
-<br>
-Here is the Main Menu screen and Shop System which I created myself. I added animations to the UI elements which gave it a better look. The shop system checks your current credits and compares them to the prices of the car's selected paint. It will either let you purchase or give you an error sound, indicating not enough money.
+
+
 
 
 <br>
