@@ -7,7 +7,7 @@ public class EnemyProjectile : MonoBehaviour
     public float speed;
 
    
-    void LateUpdate()
+   private void LateUpdate()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
