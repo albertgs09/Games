@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private int health;
     private bool crashedPlayer = false;
-    GameObject gc;
+    private GameObject gc;
     public GameObject explosion;
     private AudioSource hit;
     private SpriteRenderer body;
