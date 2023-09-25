@@ -9,10 +9,8 @@ public class UIController : MonoBehaviour
     public GameObject pausePage, inGameUI, gameOverScreen, loadingScreen;
     private AudioSource audioSource;
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    private void Start() =>  audioSource = GetComponent<AudioSource>();
+    
     public void InGame()
     {
         PlayAudio();
@@ -48,8 +46,5 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    void PlayAudio()
-    {
-        audioSource.Play();
-    }
+    void PlayAudio() => audioSource.Play();
 }
