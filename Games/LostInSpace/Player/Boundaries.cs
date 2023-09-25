@@ -9,7 +9,6 @@ public class Boundaries : MonoBehaviour
     private float objectWidth;
     private float objectHeight;
 
-    // Use this for initialization
     void Start()
     {
         screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
@@ -17,7 +16,6 @@ public class Boundaries : MonoBehaviour
         objectHeight = transform.GetComponentInChildren<SpriteRenderer>().bounds.extents.y; //extents = size of height / 2
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
