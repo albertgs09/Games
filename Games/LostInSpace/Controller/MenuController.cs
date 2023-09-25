@@ -8,10 +8,9 @@ public class MenuController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    private void Start() =>  audioSource = GetComponent<AudioSource>();
+
+
     public void StartGame()
     {
         PlayAudio();
@@ -43,8 +42,6 @@ public class MenuController : MonoBehaviour
         settings.SetActive(false);
         credits.SetActive(true);
     }
-    void PlayAudio()
-    {
-        audioSource.Play();
-    }
+    void PlayAudio() =>  audioSource.Play();
+
 }
