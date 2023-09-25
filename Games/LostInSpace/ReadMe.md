@@ -1,9 +1,10 @@
-
+Lost In Space is a mobile game developed using Unity and the Unity Asset Store assets. 
+I programmed every functionality of the game including movement for players and enemies, shooting, game controller, UI, audio, and saving system using C#.
+<br>
 ![unnamed](https://github.com/albertgs09/Games/assets/65637580/7359673a-4f6f-4c43-9cac-d17897e4746a)
 
 <br>
-Lost In Space is a mobile game developed using Unity and the Unity Asset Store assets. 
-I programmed every functionality of the game including movement for players and enemies, shooting, game controller, UI, audio, and saving system using C#.
+
 <br>
 
 ![unnamed (4)](https://github.com/albertgs09/Games/assets/65637580/18a760f9-4897-471b-8783-8e296a8d8e46)
