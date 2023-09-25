@@ -1,6 +1,9 @@
 # EmotionInput
 
-https://github.com/albertgs09/Games/assets/65637580/d3069d26-0c89-432e-8e80-1f50f8ddfc6d\
+
+https://github.com/albertgs09/Games/assets/65637580/525513a7-e374-4c45-8c95-0cd4cb0c3006
+
+
 
 <br>
 <br>
