@@ -12,7 +12,6 @@ This project was created for an internship with Collimation. I was tasked to opt
 
 
 
-https://github.com/albertgs09/Games/assets/65637580/24d1d33d-bfc6-44dd-81ac-f350fad77449
 
 
 ![Screenshot (226)](https://github.com/albertgs09/Games/assets/65637580/3eeaf38e-aff9-46ee-b14b-8827ccac3375)
@@ -21,3 +20,7 @@ https://github.com/albertgs09/Games/assets/65637580/24d1d33d-bfc6-44dd-81ac-f350
 ![Screenshot (229)](https://github.com/albertgs09/Games/assets/65637580/4fa27be3-95c3-41fe-85ef-f9b5579ecb41)
 ![Screenshot (228)](https://github.com/albertgs09/Games/assets/65637580/f4ddff1c-f378-4130-b920-1d1fedeaceee)
 ![Screenshot (227)](https://github.com/albertgs09/Games/assets/65637580/0e8098a1-419a-4383-b5b2-9cf1b317b309)
+<br>
+<br>
+
+https://github.com/albertgs09/Games/assets/65637580/24d1d33d-bfc6-44dd-81ac-f350fad77449
