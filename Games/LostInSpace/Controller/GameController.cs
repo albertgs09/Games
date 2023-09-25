@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject instructions;
     public Slider healthBar;
     private int score, highScore;
-    bool isPaused = false;
+    private bool isPaused = false;
 
     public GameObject spawner;
     public UIController ui;
@@ -30,10 +30,8 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
-    public void UpdateHealthBar(float health)
-    {
-        healthBar.value = health;
-    }
+    public void UpdateHealthBar(float health) => healthBar.value = health;
+    
 
    public void PausedUnPause()
     {
@@ -56,15 +54,8 @@ public class GameController : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] projectiles = GameObject.FindGameObjectsWithTag("EnemyProjectile");
         foreach (GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }
+              Destroy(enemy);
         foreach(GameObject projectile in projectiles)
-        {
-            Destroy(projectile);
-        }
-    }
-
-  
-   
+              Destroy(projectile);
+    }  
 }
