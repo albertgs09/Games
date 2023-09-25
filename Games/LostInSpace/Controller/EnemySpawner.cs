@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemies;
     public Transform[] spawnPoints;
-    int enemy;
+    private int enemy;
 
     [SerializeField] private float timeBetweenShips;
     private float timer = 0;
@@ -15,10 +15,7 @@ public class EnemySpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
         if(timeBetweenShips< timer)
-        {
             Ordered(Random.Range(0, spawnPoints.Length));
-            //RandomEnemy(Random.Range(0, spawnPoints.Length), Random.Range(0, enemies.Length));
-        }
     }
 
     void Ordered(int rand)
