@@ -10,13 +10,9 @@ public class ObjectPool : MonoBehaviour
     private int amountToPool = 20;
 
     [SerializeField] private GameObject bulletPrefab;
-    // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
+        if(instance == null) instance = this;
     }
     private void Start()
     {
