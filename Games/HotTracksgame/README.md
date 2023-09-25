@@ -1,8 +1,7 @@
 # HotTracksgame
 Hot Tracks is a free game on itch.io, race around three tracks as you try to beat the fastest time and earn points to customize your car. Hot Tracks was developed using Unity and assets from the Unity Asset Store. I programmed every functionality of the game including car/camera movement, game controller, shop, UI , audio and saving system using C#. This was a project I made on my own that took about a month to develop. Feel free to visit the game page on itch.io and try it out yourself!
 
-Link to Game:
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVN4N1hxZ3haYTJBd212b2VPZjFrTzBtMDFrUXxBQ3Jtc0trbkxOVHpwTkVyZ05SWDFBSkZnd0JfbUZJN1NMcTdiVjdpUm95SUNPWVNCWjhpRW8yTVBLM29QWkFGbFl2NkNVbzNOcElHaDE1RkdMMVlDN1o4S0tPcWJKajVTaG1vcF9rV040Wm45MGdLaVAyQlJYTQ&q=https%3A%2F%2Faajrgs2020.itch.io%2Fhot-tracks-cars&v=VM-f5YiliSg
+
 
 <br>
 <br>
@@ -27,6 +26,12 @@ https://user-images.githubusercontent.com/65637580/194913703-36798f11-ba85-4764-
 <br>
 <br>
 Here is the Main Menu screen and Shop System which I created myself. I added animations to the UI elements which gave it a better look. The shop system checks your current credits and compares them to the prices of the car's selected paint. It will either let you purchase or give you an error sound, indicating not enough money.
+
+
+<br>
+<br>
+Link to Game:
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVN4N1hxZ3haYTJBd212b2VPZjFrTzBtMDFrUXxBQ3Jtc0trbkxOVHpwTkVyZ05SWDFBSkZnd0JfbUZJN1NMcTdiVjdpUm95SUNPWVNCWjhpRW8yTVBLM29QWkFGbFl2NkNVbzNOcElHaDE1RkdMMVlDN1o4S0tPcWJKajVTaG1vcF9rV040Wm45MGdLaVAyQlJYTQ&q=https%3A%2F%2Faajrgs2020.itch.io%2Fhot-tracks-cars&v=VM-f5YiliSg
 
 
 
