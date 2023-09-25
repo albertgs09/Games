@@ -1,4 +1,11 @@
 # HotTracksgame
+
+![HTCars](https://github.com/albertgs09/Games/assets/65637580/4af0f86c-9b35-44b3-ac2d-1c8100d543db)
+
+<br>
+<br>
+
+
 Hot Tracks is a free game on itch.io, race around three tracks as you try to beat the fastest time and earn points to customize your car. Hot Tracks was developed using Unity and assets from the Unity Asset Store. I programmed every functionality of the game including car/camera movement, game controller, shop, UI , audio and saving system using C#. This was a project I made on my own that took about a month to develop. Feel free to visit the game page on itch.io and try it out yourself!
 
 
