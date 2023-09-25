@@ -1,1 +1,3 @@
 
+Lost In Space is a mobile game developed using Unity and the Unity Asset Store assets. 
+I programmed every functionality of the game including movement for players and enemies, shooting, game controller, UI, audio, and saving system using C#.
