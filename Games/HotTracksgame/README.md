@@ -34,9 +34,6 @@ Here is the Main Menu screen and Shop System which I created myself. I added ani
 https://user-images.githubusercontent.com/65637580/194913703-36798f11-ba85-4764-a76e-6793f3254f84.mp4
 
 
-
-
-
 <br>
 <br>
 Link to Game:
