@@ -39,7 +39,7 @@ https://user-images.githubusercontent.com/65637580/194913703-36798f11-ba85-4764-
 <br>
 <br>
 Link to Game:
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVN4N1hxZ3haYTJBd212b2VPZjFrTzBtMDFrUXxBQ3Jtc0trbkxOVHpwTkVyZ05SWDFBSkZnd0JfbUZJN1NMcTdiVjdpUm95SUNPWVNCWjhpRW8yTVBLM29QWkFGbFl2NkNVbzNOcElHaDE1RkdMMVlDN1o4S0tPcWJKajVTaG1vcF9rV040Wm45MGdLaVAyQlJYTQ&q=https%3A%2F%2Faajrgs2020.itch.io%2Fhot-tracks-cars&v=VM-f5YiliSg
+https://aajrgs2020.itch.io/hot-tracks-cars
 
 
 
